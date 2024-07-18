@@ -45,4 +45,17 @@
   ```
   + Create a PR from merge-test-into-prod to prod.
   + Get the PR reviewed, approved, and merged.
+## How to change Git author-name
+# Start interactive rebase for the last 4 commits
+git rebase -i HEAD~4
+
+# In the editor, change `pick` to `edit` for each commit, then save and close
+
+# For each commit Git pauses at:
+git commit --amend --author="New Author Name <newemail@example.com>"
+git rebase --continue
+
+# After all commits are amended and the rebase is complete:
+git push --force
+
     
